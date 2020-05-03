@@ -1,0 +1,22 @@
+﻿@model IndexViewModel
+
+<ul class="list-group">
+    @foreach (Post post in Model.Posts)
+    {
+        <li class="list-group-item" style="margin:20px">
+            <div class="container">
+                <h4>@post.Name</h4>
+                <h3>@post.PhoneNumber</h3>
+                <h6>@post.DatePosted</h6>
+                <h4>@post.Text</h4>
+                @if (post.UserID == Model.userID)
+                {
+                    <form method="post" action="/home/deletePost">
+                        <input type="hidden" name="id" value="@post.ID" />
+                        <button class="btn btn-danger">Delete</button>
+                    </form>
+                }
+            </div>
+        </li>
+    }
+</ul>
