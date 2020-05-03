@@ -3,8 +3,6 @@
     <form method="post" action="/home/NewAd">
         <div class="col-md-6 offset-3">
             <input type="hidden" name="userID" value="@Model.ID" />
-            <input class="form-control" name="Name" value="@Model.Name" placeholder="Name(optional)" />
-            <input required class="form-control" name="PhoneNumber" value="@Model.PhoneNumber" placeholder="Phone Number" />
             <input required class="form-control" name="Text" placeholder="Describtion" />
             <button class="btn btn-primary">Post</button>
         </div>
