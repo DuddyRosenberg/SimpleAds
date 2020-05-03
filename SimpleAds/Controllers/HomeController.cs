@@ -43,7 +43,7 @@ namespace SimpleAds.Controllers
             return Redirect("/");
         }
         [Authorize]
-        public IActionResult Account()
+        public IActionResult MyAccount()
         {
             return View(_databaase.GetPosts(int.Parse(User.Identity.Name)));
         }

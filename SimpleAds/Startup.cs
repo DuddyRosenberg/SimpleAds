@@ -51,6 +51,7 @@ namespace SimpleAds
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {
@@ -58,8 +59,7 @@ namespace SimpleAds
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
-
-            app.UseAuthentication();
+            
         }
     }
 }

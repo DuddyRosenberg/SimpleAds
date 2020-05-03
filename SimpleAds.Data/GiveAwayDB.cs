@@ -42,7 +42,7 @@ namespace SimpleAds.Data
             using (var connection = new SqlConnection(_connectionString))
             using (var command = connection.CreateCommand())
             {
-                command.CommandText = @"SELECT p.* FROM Posts p
+                command.CommandText = @"SELECT * FROM Posts p
                                         LEFT JOIN Users u ON p.UserID = u.ID
                                         WHERE u.ID=@id";
                 command.Parameters.AddWithValue("@id", userID);
@@ -82,8 +82,8 @@ namespace SimpleAds.Data
             {
                 command.CommandText = "SELECT * FROM Users WHERE ID=@id";
                 command.Parameters.AddWithValue("@id", id);
-                var reader = command.ExecuteReader();
                 connection.Open();
+                var reader = command.ExecuteReader();
                 reader.Read();
                 return new User
                 {
