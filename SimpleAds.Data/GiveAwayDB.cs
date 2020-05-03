@@ -17,7 +17,7 @@ namespace SimpleAds.Data
             using (var connection = new SqlConnection(_connectionString))
             using (var command = connection.CreateCommand())
             {
-                command.CommandText = @"SELECT p.* FROM Posts p
+                command.CommandText = @"SELECT * FROM Posts p
                                         LEFT JOIN Users u ON p.UserID = u.ID";
                 connection.Open();
                 var reader = command.ExecuteReader();
